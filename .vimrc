@@ -63,7 +63,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|\.git'
 " check one time after 4s of inactivity in normal mode
 set autoread
 au CursorHold * checktime
