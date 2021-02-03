@@ -1,6 +1,8 @@
 syntax on
+filetype plugin indent on
 
 set noerrorbells
+set belloff=all
 set tabstop=2 softtabstop=2
 set shiftwidth=2
 set expandtab
@@ -27,10 +29,13 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 call plug#begin('~/.vim/plugged')
 
 Plug 'morhetz/gruvbox'
+Plug 'rakr/vim-one'
+Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'wincent/scalpel'
 Plug 'vim-syntastic/syntastic'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'keith/swift.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'itchyny/lightline.vim'
@@ -53,7 +58,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
-colorscheme gruvbox
+" colorscheme gruvbox
+" colorscheme one
+colorscheme Monokai
 set background=dark
 
 " Copy paste with MacOS
@@ -62,6 +69,8 @@ map <Leader>pp mz:-1r !pbpaste clip<CR>
 
 " Prettier
 nmap <Leader>po <Plug>(Prettier)
+
+nnoremap <Leader>ph :%!stylish-haskell<CR>
 
 filetype plugin indent on
 " colorscheme onedark
@@ -88,9 +97,6 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
-" check one time after 4s of inactivity in normal mode
-set autoread
-au CursorHold * checktime
 
 let g:AutoPairsFlyMode = 0
 let g:AutoPairsShortcutBackInsert = '<M-b>'
@@ -280,3 +286,12 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " Haskell Format
 set formatprg=stylish-haskell
+
+" Haskell Syntax Highlight
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
