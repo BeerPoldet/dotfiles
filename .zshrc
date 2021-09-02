@@ -1,8 +1,9 @@
 stty discard undef
 
-export TERM=xterm-256color
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+export CPATH=/usr/local/include
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/poldet/.oh-my-zsh"
@@ -42,6 +43,7 @@ plugins=(
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
+
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
@@ -76,6 +78,9 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+export EDITOR='nvim'
+export VISUAL=$EDITOR
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -99,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Using better version of newly installed vim
-alias vim=/usr/local/bin/vim
+alias vim=/usr/local/bin/nvim
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -113,3 +118,6 @@ export PATH=$PATH:$HOME/.local/bin
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+# added by travis gem
+[ ! -s /Users/poldet/.travis/travis.sh ] || source /Users/poldet/.travis/travis.sh
