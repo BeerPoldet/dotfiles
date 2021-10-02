@@ -3,3 +3,5 @@
   email = poladet.a@gmail.com
 [pull]
 	rebase = false
+[init]
+	defaultBranch = main
