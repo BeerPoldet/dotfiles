@@ -2,53 +2,58 @@
 
 ## Tools
 brew
+crossplane
 docker
-vim-plug
-zsh
-oh-my-zsh 
-nvm
-node v12
-stack
-hoogle
+elm
 gen-hie
 ghcid
-stylish-haskell
 haskell-language-server
 haskell-language-server-wrapper
+hoogle
 kubectl
-elm
+node v12
+nvm
+oh-my-zsh
+stack
+stylish-haskell
+vim-plug
+zsh
 
 ## Brew 
+brew install argocd
 brew install awscli
-brew install tmux
+brew install carthage
+brew install devspace
+brew install dive
+brew install doctl
+brew install fastlane
+brew install fzf
+brew install gh
+brew install helm
+brew install hub
+brew install jq
+brew install kind
+brew install kubectx
+brew install kubeseal
+brew install mitmproxy
+brew install mutagen
 brew install neovim
+brew install ngrok
+brew install ripgrep
+brew install siege
 brew install swiftformat
 brew install swiftgen
-brew install fzf
+brew install terraform
 brew install the_silver_searcher
-brew install gh
-brew install hub
-brew install fastlane
-brew install carthage
-brew install mitmproxy
+brew install tmux
 brew install tree
 brew install treesitter
-brew install ripgrep
-brew install terraform
-brew install ngrok
-brew install jq
 brew install watch
-brew install siege
-brew install kind
-brew install helm
-brew install mutagen
-brew install doctl
-brew install xcodegen
 brew install xcbeautify
-brew install argocd
+brew install xcodegen
 
-brew install mysql
 brew install mongodb-community
+brew install mysql
 brew install redis
 
 ## Useful Commands
