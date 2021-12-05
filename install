@@ -1,15 +1,17 @@
 #!/bin/sh
 
 # Install Nix
-sudo curl -L https://nixos.org/nix/install | sh
+sh <(curl -L https://nixos.org/nix/install) --daemon --darwin-use-unencrypted-nix-store-volume
 
 # Install Packages
 nix-env -iA \
   nixpkgs.antibody \
   nixpkgs.fzf \
   nixpkgs.libmysqlclient \
+  nixpkgs.neovim \
   nixpkgs.ripgrep \
-  nixpkgs.stow
+  nixpkgs.stow \
+  nixpkgs.tmux
 
 # Stow
 stow alacritty
