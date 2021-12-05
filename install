@@ -15,6 +15,7 @@ nix-env -iA \
 stow alacritty
 stow git
 stow nvim
+stow tmux
 stow zsh
 
 # Bundle zsh plugins
