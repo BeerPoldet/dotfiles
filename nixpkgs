@@ -1,0 +1,18 @@
+#!/bin/sh
+
+AARCH_64_PLUGINS='
+nixpkgs.antibody
+nixpkgs.fzf
+nixpkgs.libmysqlclient
+nixpkgs.ripgrep
+nixpkgs.stow
+'
+
+nix-env -iA $AARCH_64_PLUGINS
+
+# X86_64_PLUGINS='
+# nixpkgs.pcre
+# nixpkgs.zstd
+# '
+# 
+# nix-env -iA $X86_64_PLUGINS --option system x86_64-darwin

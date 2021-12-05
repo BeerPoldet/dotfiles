@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Install Nix
+sudo curl -L https://nixos.org/nix/install | sh
+
+# Install Packages
+nix-env -iA \
+  nixpkgs.antibody \
+  nixpkgs.fzf \
+  nixpkgs.libmysqlclient \
+  nixpkgs.ripgrep \
+  nixpkgs.stow
+
+# Stow
+stow alacritty
+stow git
+stow nvim
+stow zsh
+
+# Bundle zsh plugins
+antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh

@@ -1,11 +1,13 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " Theme
-Plug 'morhetz/gruvbox' 
 Plug 'ryanoasis/vim-devicons'
 
 " Status line
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+" Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
 
 " Syntax
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -50,7 +52,7 @@ set smartcase
 set number
 set nowrap
 set noswapfile
-set undodir=~/.config/undodir
+set undodir=~/.config/nvim/undodir
 set undofile
 set colorcolumn=100
 set encoding=UTF-8
@@ -65,10 +67,11 @@ set encoding=UTF-8
 
 
 " Galaxy
-
-lua <<EOF
-require("statusbar")
-EOF
+let g:airline#extensions#tabline#enabled = 1
+let g:tmuxline_preset = 'tmux'
+" lua <<EOF
+" require("statusbar")
+" EOF
 
 
 

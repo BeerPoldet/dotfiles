@@ -5,7 +5,7 @@ require'nvim-treesitter.configs'.setup {
       "bash",
       "javascript",
       "typescript", 
-      "haskell",
+      -- "haskell",
       "swift",
       "html",
       "json",

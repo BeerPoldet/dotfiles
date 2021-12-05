@@ -1,9 +1,18 @@
 stty discard undef
 
-# If you come from bash you might have to change your $PATH.
+export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/.local/bin
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+# x86_64
+export PATH=/usr/local/homebrew/bin:$PATH
+export PATH="/usr/local/homebrew/opt/mysql-client/bin:$PATH"
+# ARM
+export PATH=/opt/homebrew/bin:$PATH
+# export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export PATH="/opt/homebrew/opt/python@3.9/libexec/bin:$PATH"
 
-export CPATH=/usr/local/include
+# for intel x86_64 brew
+alias xbrew='arch -x86_64 /usr/local/homebrew/bin/brew'
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/poldet/.oh-my-zsh"
@@ -104,14 +113,11 @@ export VISUAL=$EDITOR
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Using better version of newly installed vim
-alias vim=/usr/local/bin/nvim
+alias vim=/opt/homebrew/bin/nvim
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH="$PATH:$HOME/bin"
-export PATH=$PATH:$HOME/.local/bin
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
