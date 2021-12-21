@@ -7,11 +7,17 @@ sh <(curl -L https://nixos.org/nix/install) --daemon --darwin-use-unencrypted-ni
 nix-env -iA \
   nixpkgs.antibody \
   nixpkgs.fzf \
+  nixpkgs.hub \
   nixpkgs.libmysqlclient \
   nixpkgs.neovim \
   nixpkgs.ripgrep \
   nixpkgs.stow \
-  nixpkgs.tmux
+  nixpkgs.slack-cli \
+  nixpkgs.tree \
+  nixpkgs.tmux \
+  nixpkgs.watch \
+  nixpkgs.yarn \
+  nixpkgs.argo
 
 # Stow
 stow alacritty

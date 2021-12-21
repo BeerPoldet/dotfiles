@@ -10,8 +10,12 @@ source ~/.zsh_plugins.sh
 
 export EDITOR='nvim'
 export VISUAL=$EDITOR
+# x86_64
+# export PATH=/usr/local/homebrew/bin:$PATH
+# ARM
+export PATH=/opt/homebrew/bin:$PATH
 
-alias vim=/opt/homebrew/bin/nvim
+alias vim=~/.nix-profile/bin/nvim
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
