@@ -16,8 +16,10 @@ nix-env -iA \
   nixpkgs.tree \
   nixpkgs.tmux \
   nixpkgs.watch \
-  nixpkgs.yarn \
-  nixpkgs.argo
+  nixpkgs.argo \
+  nixpkgs.kustomize \
+  nixpkgs.rustup \
+  nixpkgs.rust-analyzer
 
 # Stow
 stow alacritty
@@ -25,6 +27,7 @@ stow git
 stow nvim
 stow tmux
 stow zsh
+stow bundle
 
 # Bundle zsh plugins
 antibody bundle < ~/.zsh_plugins.txt > ~/.zsh_plugins.sh

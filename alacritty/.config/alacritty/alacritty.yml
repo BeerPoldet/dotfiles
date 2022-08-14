@@ -114,12 +114,13 @@ font:
     #   - (Windows) Consolas
     # family: SF Mono
     # family: 'Hack Nerd Font Mono'
-    family: 'FiraCode Nerd Font'
+    # family: 'FiraCode Nerd Font'
+    family: 'SFMono Nerd Font'
     # family: 'FiraCode Nerd Font Mono'
     # family: 'Inconsolata Nerd Font'
 
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    style: Regular
 
   # Bold font face
   bold:
@@ -129,7 +130,9 @@ font:
     # value specified for the normal font.
     #family: monospace
     # family: 'Hack Nerd Font Mono'
-    family: 'FiraCode Nerd Font'
+    # family: 'FiraCode Nerd Font'
+    # family: 'Hack'
+    family: 'SFMono Nerd Font'
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -142,7 +145,9 @@ font:
     # value specified for the normal font.
     #family: monospace
     # family: 'Hack Nerd Font Mono'
-    family: 'FiraCode Nerd Font'
+    # family: 'FiraCode Nerd Font'
+    # family: 'Hack'
+    family: 'SFMono Nerd Font'
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -154,8 +159,10 @@ font:
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
     #family: monospace
-    family: 'FiraCode Nerd Font'
+    # family: 'FiraCode Nerd Font'
     # family: 'Hack Nerd Font Mono'
+    # family: 'Hack'
+    family: 'SFMono Nerd Font'
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
