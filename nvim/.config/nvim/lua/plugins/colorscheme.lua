@@ -20,22 +20,6 @@ return {
       colorscheme = "catppuccin",
     },
   },
-  --- LSP
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = { "bufreadpre", "bufnewfile" },
-    dependencies = { "mason.nvim" },
-    opts = function()
-      local nls = require("null-ls")
-      return {
-        sources = {
-          nls.builtins.formatting.prettierd,
-          nls.builtins.formatting.stylua,
-          nls.builtins.diagnostics.flake8,
-        },
-      }
-    end,
-  },
 }
 
 -- every spec file under config.plugins will be loaded automatically by lazy.nvim
