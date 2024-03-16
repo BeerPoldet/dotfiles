@@ -5,3 +5,5 @@
 vim.opt.relativenumber = false
 vim.opt.mouse = ""
 vim.opt.clipboard = ""
+vim.opt.conceallevel = 0
+vim.g.autoformat = false
