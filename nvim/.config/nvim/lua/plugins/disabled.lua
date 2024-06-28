@@ -17,15 +17,15 @@ return {
   },
   {
     "rcarriga/nvim-notify",
-    enabled = true,
+    enabled = false,
   },
   {
     "folke/noice.nvim",
-    enabled = true,
+    enabled = false,
   },
   {
     "rafamadriz/friendly-snippets",
-    enabled = true,
+    enabled = false,
   },
   -- {
   --   "nvim-cmp",
@@ -33,10 +33,10 @@ return {
   -- },
   {
     "echasnovski/mini.pairs",
-    enabled = true,
+    enabled = false,
   },
   {
     "echasnovski/mini.ai",
-    enabled = true,
+    enabled = false,
   },
 }
