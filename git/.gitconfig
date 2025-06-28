@@ -1,7 +1,8 @@
 [user]
   name = beerpoldet
-  email = poladet.a@gmail.com
+  email = poldet.ai@gmail.com
 [pull]
 	rebase = false
 [init]
 	defaultBranch = main
+	templateDir = /Users/poldet/.git-templates

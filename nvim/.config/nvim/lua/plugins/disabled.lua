@@ -1,22 +1,6 @@
 return {
   {
-    "ggandor/leap.nvim",
-    enabled = false,
-  },
-  {
-    "ggandor/flit.nvim",
-    enabled = false,
-  },
-  {
     "folke/flash.nvim",
-    enabled = false,
-  },
-  {
-    "akinsho/bufferline.nvim",
-    enabled = true,
-  },
-  {
-    "rcarriga/nvim-notify",
     enabled = false,
   },
   {
@@ -24,11 +8,15 @@ return {
     enabled = false,
   },
   {
-    "rafamadriz/friendly-snippets",
-    enabled = false,
+    "folke/snacks.nvim",
+    -- type snacks.Config
+    opts = {
+      notifier = { enabled = false },
+      scroll = { enabled = false },
+    },
   },
   -- {
-  --   "nvim-cmp",
+  --   "echasnovski/mini.ai",
   --   enabled = false,
   -- },
   {
@@ -36,7 +24,7 @@ return {
     enabled = false,
   },
   {
-    "echasnovski/mini.ai",
+    "echasnovski/mini.surround",
     enabled = false,
   },
 }

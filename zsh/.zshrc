@@ -1,51 +1,79 @@
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
-# End Nix
+# zmodload zsh/zprof
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-source ~/.zsh_plugins.sh
-
-export EDITOR='nvim'
-export VISUAL=$EDITOR
-# x86_64
+## x86_64
 # export PATH=$PATH:/usr/local/homebrew/bin
-# ARM
-export PATH=$PATH:/opt/homebrew/bin
+## ARM
+export PATH=/opt/homebrew/bin:$PATH
 export PATH=$PATH:~/.local/bin
 
-alias ibrew='arch -x86_64 /usr/local/Homebrew/bin/brew'
-
-alias vim=/opt/homebrew/bin/nvim
-
-alias python="$(pyenv which python)"
-alias pip="$(pyenv which pip)"
+# source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+# antidote load
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100000
-SAVEHIST=100000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_find_no_dups
+setopt hist_save_no_dups
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':omz:plugins:nvm' lazy yes
+
+alias ls='ls --color'
+
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk
+
+source "$HOME/.zinit"
+
+# autoload -Uz _zinit
+# (( ${+_comps} )) && _comps[zinit]=_zinit
+
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^[^?' vi-backward-kill-word
+bindkey "^X^E" edit-command-line
+
+export EDITOR='nvim'
+export VISUAL=$EDITOR
+
+alias ibrew='arch -x86_64 /usr/local/Homebrew/bin/brew'
+alias vim=/opt/homebrew/bin/nvim
+alias python="$(pyenv which python)"
+alias pip="$(pyenv which pip)"
 
 export JQ_COLORS='0;31:0;39:0;39:0;39:0;32:1;39:1;39'
-
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-source ~/.config/.jenvrc
-
-export GEM_HOME=$HOME/.gem
-export PATH=$GEM_HOME/bin:$PATH
 
 # bun completions
 [ -s "/Users/poldet/.bun/_bun" ] && source "/Users/poldet/.bun/_bun"
@@ -67,3 +95,9 @@ esac
 eval "$(/Users/poldet/.local/bin/mise activate zsh)"
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+eval "$(rbenv init - --no-rehash zsh)"
+
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8.0)"
+
+# zprof
