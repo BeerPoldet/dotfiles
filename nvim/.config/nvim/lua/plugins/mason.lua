@@ -1,8 +1,9 @@
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
+        "biome",
         "prettier",
         "swiftlint",
         "tailwindcss-language-server",
@@ -10,6 +11,4 @@ return {
       },
     },
   },
-  { "mason-org/mason.nvim", version = "^1.0.0" },
-  { "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
 }

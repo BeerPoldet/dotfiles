@@ -20,11 +20,11 @@ return {
   --   enabled = false,
   -- },
   {
-    "echasnovski/mini.pairs",
+    "nvim-mini/mini.pairs",
     enabled = false,
   },
   {
-    "echasnovski/mini.surround",
+    "nvim-mini/mini.surround",
     enabled = false,
   },
 }

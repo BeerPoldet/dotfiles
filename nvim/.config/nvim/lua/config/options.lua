@@ -6,4 +6,5 @@ vim.opt.mouse = ""
 vim.opt.clipboard = ""
 
 vim.g.autoformat = false
+vim.g.lazyvim_prettier_needs_config = true
 -- vim.g.snacks_animate = false

@@ -1,6 +1,5 @@
 argocd
 awscli
-carthage
 devspace
 dive
 doctl
@@ -8,7 +7,6 @@ fastlane
 fzf
 gh
 helm
-hub
 jq
 kind
 kubectx

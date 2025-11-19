@@ -101,3 +101,7 @@ eval "$(rbenv init - --no-rehash zsh)"
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8.0)"
 
 # zprof
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
