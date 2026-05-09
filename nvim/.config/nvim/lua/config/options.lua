@@ -8,3 +8,9 @@ vim.opt.clipboard = ""
 vim.g.autoformat = false
 vim.g.lazyvim_prettier_needs_config = true
 -- vim.g.snacks_animate = false
+
+-- Machine-local overrides (not tracked in git)
+local local_config = vim.fn.expand("~/.config/nvim/local.lua")
+if vim.fn.filereadable(local_config) == 1 then
+  dofile(local_config)
+end

@@ -1,4 +1,10 @@
 alacritty/.config/alacritty/themes
 nvim/.config/nvim/undodir/
 nvim/.config/nvim/undodir/
+nvim/.config/nvim/lazy-lock.json
 .DS_Store
+
+# Machine-local overrides
+zsh/.zshrc.local
+git/.gitconfig.local
+nvim/.config/nvim/local.lua
