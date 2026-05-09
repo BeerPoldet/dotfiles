@@ -31,6 +31,7 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' lazy-cmd node npm npx claude
 
 alias ls='ls --color'
 
@@ -65,8 +66,7 @@ export VISUAL=$EDITOR
 
 alias ibrew='arch -x86_64 /usr/local/Homebrew/bin/brew'
 alias vim=/opt/homebrew/bin/nvim
-alias python="$(pyenv which python)"
-alias pip="$(pyenv which pip)"
+eval "$(pyenv init -)"
 
 export JQ_COLORS='0;31:0;39:0;39:0;39:0;32:1;39:1;39'
 
@@ -83,6 +83,15 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=$PATH:$HOME/.maestro/bin
 
+# gem
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
+
+# Android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
+export PATH="$HOME/Library/Android/sdk/emulator:$PATH"
+
 # pnpm
 export PNPM_HOME="/Users/poldet/Library/pnpm"
 case ":$PATH:" in
@@ -98,7 +107,9 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 eval "$(rbenv init - --no-rehash zsh)"
 
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.8.0)"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
 
 # zprof
 
