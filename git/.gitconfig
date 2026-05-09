@@ -1,8 +1,10 @@
 [user]
-  name = beerpoldet
-  email = poldet.ai@gmail.com
+	name = beerpoldet
+	email = poldet.ai@gmail.com
 [pull]
 	rebase = false
 [init]
 	defaultBranch = main
 	templateDir = /Users/poldet/.git-templates
+[include]
+	path = ~/.gitconfig.local
