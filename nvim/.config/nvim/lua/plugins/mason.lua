@@ -8,6 +8,7 @@ return {
         "swiftlint",
         "tailwindcss-language-server",
         "terraform-ls",
+        "vue-language-server",
       },
     },
   },
