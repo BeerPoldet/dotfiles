@@ -4,9 +4,11 @@
 
 vim.opt.mouse = ""
 vim.opt.clipboard = ""
+vim.opt.conceallevel = 0
 
 vim.g.autoformat = false
 vim.g.lazyvim_prettier_needs_config = true
+
 -- vim.g.snacks_animate = false
 
 -- Machine-local overrides (not tracked in git)
