@@ -5,6 +5,7 @@
 vim.opt.mouse = ""
 vim.opt.clipboard = ""
 vim.opt.conceallevel = 0
+vim.opt.swapfile = false
 
 vim.g.autoformat = false
 vim.g.lazyvim_prettier_needs_config = true
