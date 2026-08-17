@@ -9,6 +9,12 @@ vim.opt.conceallevel = 0
 vim.g.autoformat = false
 vim.g.lazyvim_prettier_needs_config = true
 
+-- TypeScript LSP: "vtsls" | "tsgo"
+-- Staying on vtsls: tsgo (TypeScript 7 native) is much faster but cannot load
+-- tsserver plugins yet, so it can't type-check .vue templates (Nuxt work).
+-- See https://github.com/vuejs/language-tools/issues/5381
+vim.g.lazyvim_ts_lsp = "vtsls"
+
 -- vim.g.snacks_animate = false
 
 -- Machine-local overrides (not tracked in git)
